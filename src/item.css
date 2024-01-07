@@ -1,0 +1,316 @@
+/* Common Styles */
+.clothing-item {
+  display: inline-block;
+  cursor: pointer;
+  margin: 0.6944vw; /* 10/1440 * 100 */
+}
+
+.image-preview {
+  /* padding-right: 10vw; */
+  margin-left: 0vw;
+  margin-top: 0vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35%; /* 300/1440 * 100 */
+  height: auto; /* 400/1440 * 100 */
+}
+
+/* Image Styles */
+.base-image {
+  position: relative; /* Change position to relative so it doesn't overlap dropdowns */
+  z-index: 1; /* Ensure this is below the overlay in stacking order */
+  width: 130%; /* Adjust the width as necessary */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  border: 1px solid #000000; /* Example: a white border with 2px thickness */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 2; /* Ensure it's above the base image */
+  /* ...rest of your styles... */
+}
+
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Define additional classes for specific states */
+.overlay-with-image {
+  width: 35%; /* Adjust as needed */
+  height: 35%; /* Adjust as needed */
+}
+
+/* You can define other classes for different products/colors as needed */
+
+/* Ensure the .dropdowns class has enough space and doesn't overlap with images */
+.dropdowns {
+  position: relative; /* Add position relative to establish a new stacking context */
+  z-index: 3; /* Higher z-index to ensure dropdowns are above images */
+  /* Add any additional styling required for layout and spacing */
+}
+
+.item-selection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-bottom: 1rem; Adjust as needed */
+  padding: 5vw;
+}
+
+.selection-area {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.selection-container {
+  display: flex;
+  flex-direction: column;
+  margin-right: 2rem; /* Adjust as needed */
+}
+
+.selection-column {
+  margin-bottom: 1rem; /* Adjust as needed */
+}
+
+h2 {
+  font-weight: bold;
+}
+
+.options-and-buttons {
+  flex-grow: 1;
+  max-width: 50%;
+}
+
+.options-section {
+  margin-right: 1rem; /* Ensure there's space between the options and image */
+}
+
+.options-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem; /* Adjust as needed */
+  margin-bottom: 1rem; /* Space before the next heading */
+  width: 85%;
+}
+
+.option-box {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  user-select: none; /* Prevent text selection */
+  flex: 0 1 auto; /* Don't grow, but allow shrinking and base width on content */
+  min-width: 100px; /* Minimum width for each option box */
+}
+
+.option-box.selected {
+  border-color: #4CAF50; /* Green border for selected option */
+  background-color: #e8f5e9; /* Light green background for selected option */
+}
+
+/* Style for the buttons container */
+.buttons-container {
+  display: flex;
+  justify-content: flex-start; /* Align buttons to the start */
+  gap: 1rem; /* Space between buttons */
+  padding-top: 0.5rem
+}
+
+.button {
+  /* Existing styles */
+  border-radius: 20px; /* This gives a rounded edge to the buttons
+  /* background-color: #4CAF50; Green border for selected option */
+  background-color: #4CAF50; /* Green background for clickable button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  /* transition: background-color 0.3s ease; */
+}
+
+.button:hover {
+  /* Optional: You can also add a hover effect like changing the background color */
+  background-color: #365d98; /* Example hover color */
+}
+
+.image-container {
+  display: grid;
+  gap: 1vw;
+  /* margin-top: 60px; */
+  width: 80%;  /* Set the grid container to 85% of the width of its parent */
+  margin-left: auto;  /* Centers the grid container horizontally */
+  margin-right: auto;
+  grid-template-columns: repeat(1, 1fr);  /* Divides the grid into three equal-width columns */
+  /* box-sizing: border-box; */
+}
+
+/* ... (rest of your CSS) */
+
+/* item.css */
+.enabled {
+  background-color: #4CAF50; /* Green background for clickable button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.enabled:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.disabled {
+  background-color: #cccccc; /* Grey background for disabled button */
+  color: #666666; /* Darker grey text to indicate it's not active */
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: not-allowed; /* The cursor to show it's disabled */
+}
+
+/* Adding a not-allowed cursor style on hover for disabled button */
+.disabled:hover {
+  cursor: not-allowed;
+}
+
+/* Quantity Input */ 
+
+.quantity-input {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  /* max-width: 15%; */
+  cursor: pointer;
+  user-select: none; /* Prevent text selection */
+  flex: 0 1 auto; /* Don't grow, but allow shrinking and base width on content */
+  /* min-width: 100px; Minimum width for each option box */
+  margin-bottom: 10px;
+}
+
+.quantity-input:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+  /* Hide spinner arrows in WebKit browsers */
+  -webkit-appearance: none;
+  margin: 0; 
+}
+
+/* Firefox */
+/* .quantity-input[type=number] {
+  -moz-appearance: textfield;
+} */
+
+.error-message {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+
+.svg-button {
+  background: none;
+  border: none;
+  padding-top: 1vw;
+  cursor: pointer;
+  /* Add any additional styles for your button */
+}
+
+/* .delete-item-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding-top: 1rem;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.delete-item-button:hover {
+  background-color: #d32f2f;
+} */
+
+.selection-and-delete-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px; /* Adjust padding as needed for your layout */
+}
+
+
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  /* border-bottom: 1px dotted black; Optional: adds underline to denote hoverable */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
